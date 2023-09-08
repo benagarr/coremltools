@@ -871,7 +871,7 @@ def _convolution(context, node):
     bias = inputs[2]
     strides = inputs[3]
 
-    x, weight = promote_input_dtypes([x, weight])
+    x, weight, bias = promote_input_dtypes([x, weight, bias])
 
     # Expand padding. Torch accepts either an int (for all dimensions) or an n-tuple of ints (one per dimension), but
     # we require a (2 * n)-tuple, where n is the number of spatial dimensions, start and end for each spatial dimension
